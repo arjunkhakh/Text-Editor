@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Exporting the web packages for the application
 module.exports = () => {
@@ -22,8 +21,6 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html'
       }),
-
-      new MiniCssExtractPlugin(),
 
       // Creating a Manifest.json File 
       new WebpackPwaManifest({
@@ -56,28 +53,48 @@ module.exports = () => {
       ),
     ],
 
-    // Getting the Rules for CSS, Images and Babel-Loader
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-        },
-      ],
+//     // Getting the Rules for CSS, Images and Babel-Loader
+//     module: {
+//       rules: [
+//         {
+//           test: /\.css$/i,
+//           use: ['style-loader', 'css-loader'],
+//         },
+//         {
+//           test: /\.m?js$/,
+//           exclude: /(node_modules|bower_components)/,
+//           use: {
+//             loader: 'babel-loader',
+//             options: {
+//               presets: ['@babel/preset-env'],
+//             },
+//           },
+//         },
+//       ],
+//     },
+//   };
+// };
+
+module: {
+  // CSS loaders
+  rules: [
+    {
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader'],
     },
-  };
+    {
+      test: /\.m?js$/,
+      exclude: /node_modules/,
+      // We use babel-loader in order to use ES6.
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+        },
+      },
+    },
+  ],
+},
+};
 };
