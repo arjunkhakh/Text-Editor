@@ -25,7 +25,7 @@ export const putDb = async (content) => {
   // Open up the desired object store.
   const store = tx.objectStore('jate');
 
-  // Use the .put() method to get all data in the database.
+  // Use the .put() method to get all data in the database. We get the id and value for what they want to update/
   const request = store.put({id: 1, value: content});
 
   // Get confirmation of the request.
@@ -38,12 +38,6 @@ export const putDb = async (content) => {
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async (key) => {
-  // if (initdb) {
-  //   return initdb.getAllKeys('keyval', key)
-  // } else {
-  //   console.error('getDb not implemented');
-  // }
-
   console.log('GET from the database');
 
   // Create a connection to the database database and version we want to use.

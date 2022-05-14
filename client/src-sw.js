@@ -26,7 +26,7 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// TODO: Implement asset caching
+// Implementing asset caching through registering a route and created a CacheFirst with plugins that keep the cached assets for 30 Days
 registerRoute(
   ({ request }) => request.destination === 'image',
 
