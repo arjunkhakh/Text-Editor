@@ -44,7 +44,7 @@ module.exports = () => {
         
       ),
 
-      // Using our S-Worker file for this application
+      // Injecting our Service Worker File for this application
       new InjectManifest(
         {
         swSrc: './src-sw.js',
