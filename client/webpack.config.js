@@ -9,7 +9,7 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: '../clieny/src/js/index.js',
+      main: '../client/src/js/index.js',
       install: '../client/src/js/install.js'
     },
     output: {
