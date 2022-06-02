@@ -9,7 +9,11 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
+<<<<<<< HEAD
     main: './src/js/index.js',
+=======
+      main: './src/js/index.js',
+>>>>>>> ce73710081bf607f4df864f70a1a8f0e21262eb0
       install: './src/js/install.js'
     },
     output: {
