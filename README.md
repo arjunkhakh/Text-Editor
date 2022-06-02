@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# Text-Editor
-=======
+
 # Text-Editor
 
 ## Description
@@ -19,8 +17,7 @@ Since I find Webpacks quite a hard subject, I did struggle a lot with coding eve
 
 ## Screenshot And Deployed Link
 
-Link - https://murmuring-sierra-19371.herokuapp.com/
+Link - [https://murmuring-sierra-19371.herokuapp.com/](https://quiet-inlet-03633.herokuapp.com/)
 
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/44465378/168447468-328b07fe-df40-48e3-b3f0-a9efcd9e5526.png)
->>>>>>> ce73710081bf607f4df864f70a1a8f0e21262eb0
