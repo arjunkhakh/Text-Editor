@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('../client/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-console.log(path.join(__dirname, '../client/dist/index.html'))
+// console.log(path.join(__dirname, '../client/dist/index.html'))
 require('./routes/htmlRoutes')(app);
 
 
